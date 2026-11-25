@@ -1,0 +1,18 @@
+# Entornos virtuales (cada ordenador crea el suyo con requirements.txt)
+.venv/
+venv/
+env/
+
+# Archivos temporales que genera Python al ejecutarse
+__pycache__/
+*.py[cod]
+
+# Copias automáticas de Jupyter
+.ipynb_checkpoints/
+
+# Secretos y credenciales (ej. contraseñas de BD en el futuro)
+.env
+
+# Archivos temporales del sistema operativo
+.DS_Store
+Thumbs.db
