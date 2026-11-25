@@ -9,8 +9,8 @@
 - I work on this project across **2 computers**: one at **home** and one at **school** (including **Windows + WSL2**).
 - Although I have full access to both, I want to **simulate two teammates / two workspaces** collaborating on the same repository:
   - Both computers clone the same GitHub repo (`origin`) and stay in sync via branches, pushes, pulls, and **Pull Requests (PRs)**.
-  - Commit author on this computer: **`Ray`**
-  - Commit author on the other computer: **`Ramon_G@Katana`**
+  - Commit author on this computer: **`Ray`** (nickname: **Xiquilin** — the main/lead engineer setting up `main` and the base project)
+  - Commit author on the other computer: **`Ramon_G@Katana`** (second engineer / teammate)
   - Prefer working on feature branches and merging into `main` via Pull Requests (rather than pushing everything directly to `main`), so I can practice real team workflows (branching, PR reviews, merging, and resolving conflicts).
 - Each machine / WSL environment creates its own virtual environment (`.venv/`) from `requirements.txt` (`.venv/` stays ignored in `.gitignore`).
 - Keep editor extensions needed for this project listed in `.vscode/extensions.json` so it's easy to set up on both laptops and in WSL.
