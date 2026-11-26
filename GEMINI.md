@@ -2,7 +2,9 @@
 
 ## About Me
 - I am a **learner** building this project step by step.
+- **Hands-on learning (CRITICAL — Ask before doing):** I want to do **every programming task myself** (writing code, editing config/project files like `requirements.txt`, `Dockerfile`, notebooks, scripts, running `git` or terminal commands). **Do NOT create, edit, or delete project files — or run commands that modify the project — without asking me first.** Act as a guide/coach: explain concepts clearly, walk through steps, and let me do the work. *(Exception: you are always free to update `GEMINI.md` and `docs/learning_log.md` to keep rules and my learning cheat sheet up to date.)*
 - Please explain concepts clearly, use plain language, and walk through commands and actions step by step rather than assuming I already know the jargon.
+- **Explain CLI flags:** Whenever introducing or using a terminal command with flags (e.g., `-y`, `-m`, `-c`, `-u`), briefly explain each flag: what it **comes from / stands for** (long form), what it **means**, and what it **does**.
 - Match the language I write to you in (English or Spanish).
 - **English practice:** I am not a native English speaker and want to get back to using English as a working language. When I write in English, please include a brief, friendly **"English tip"** at the end of your reply whenever there's a noticeable mistake or a more natural phrasing (keep it short so it doesn't derail the coding task).
 

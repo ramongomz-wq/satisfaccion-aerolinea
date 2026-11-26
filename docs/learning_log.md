@@ -27,6 +27,10 @@ A growing reference of tips, shortcuts, and workflows learned while building thi
 - Once your project is open in WSL, **`bash` IS your Ubuntu Linux terminal** (you won't see a separate "Ubuntu (WSL)" entry because you are already *inside* Ubuntu).
 - Click **`+`** / **`bash`**, or press `Ctrl+Shift+ñ` (Spanish keyboard) to open a new Ubuntu terminal directly in your project folder.
 
+### Bash gotcha: `event not found` with `!`
+- Inside **double quotes (`"..."`)**, interactive `bash` treats `!` as a special history shortcut (causing `bash: !: event not found`).
+- Inside **single quotes (`'...'`)**, `bash` treats everything literally — no special characters expanded. Swap quotes (`'...'` outside, `"..."` inside) whenever your command contains `!`.
+
 ---
 
 ## Working Across 2 Laptops (Git & Sync)
@@ -82,4 +86,29 @@ A growing reference of tips, shortcuts, and workflows learned while building thi
 
 ## Python & Data Science
 
-*(We'll add notes here as we go — virtual environments, Jupyter notebooks, pandas, etc.)*
+### Creating and using a virtual environment (`.venv`)
+A virtual environment gives this project its own isolated Python + libraries so packages don't clash with other projects.
+
+- **One-time Ubuntu/WSL prerequisite** (if `venv` complains about `ensurepip`):
+  ```bash
+  sudo apt update && sudo apt install -y python3.12-venv
+  ```
+- **Create `.venv`** (inside the project folder):
+  ```bash
+  python3 -m venv .venv
+  ```
+- **Activate `.venv` in Linux / WSL (`bash`):**
+  ```bash
+  source .venv/bin/activate
+  ```
+  *(You'll see `(.venv)` at the start of your prompt. To exit it, run `deactivate`.)*
+- **Select it in VS Code:** Press `Ctrl+Shift+P` → **`Python: Select Interpreter`** → pick `./.venv/bin/python` *(so autocomplete, Run, and Jupyter notebooks use `.venv` instead of Ubuntu's global Python)*.
+- **One `.venv` per project:** Don't reuse the same `.venv` across different projects — separate environments prevent package version conflicts ("dependency hell"). You can safely delete an old project's `.venv` anytime to save space and rebuild it later from `requirements.txt` (`pip` caches downloads locally so reinstalling is fast).
+
+### Installing project packages (`requirements.txt`)
+- **Install everything listed in `requirements.txt`** (with `(.venv)` active):
+  ```bash
+  pip install -r requirements.txt
+  ```
+  - `-r` comes from **`--requirement`** — it tells `pip` to read and install all packages listed in the file that follows (`requirements.txt`).
+- **Python packages vs. system tools:** Libraries like `pandas` and `streamlit` go in `requirements.txt` (installed with `pip`). System tools like **Docker** are installed at the OS level, not via `pip`.

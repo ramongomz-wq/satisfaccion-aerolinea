@@ -1,0 +1,17 @@
+# Data manipulation & analysis
+pandas
+numpy
+
+# Data visualization
+matplotlib
+seaborn
+
+# Machine Learning & Deep Learning
+scikit-learn
+tensorflow  # includes Keras
+
+# Jupyter notebooks inside VS Code
+ipykernel
+
+# Web app
+streamlit
