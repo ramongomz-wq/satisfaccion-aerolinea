@@ -44,6 +44,11 @@ A growing reference of tips, shortcuts, and workflows learned while building thi
    git push
    ```
 
+### `origin` vs `main` (don't mix them up!)
+- **`origin`** = the **remote repository on GitHub** (the *where* — your repo URL).
+- **`main`** (and `xiquilin/setup-env`) = **branches** (different versions/timelines of your code).
+- So `git push -u origin xiquilin/setup-env` means: *"upload my `xiquilin/setup-env` branch to GitHub (`origin`)"* — it does **not** touch `main`.
+
 ### Keeping environments consistent
 - **Virtual environments (`.venv/`):** Never committed to Git (listed in `.gitignore`). Each laptop builds its own from `requirements.txt`.
 - **Extensions:** Add project extensions to `.vscode/extensions.json` so the second laptop offers a one-click install, and/or turn on **Settings Sync** (gear icon in bottom-left).
