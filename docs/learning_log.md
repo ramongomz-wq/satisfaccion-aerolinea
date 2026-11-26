@@ -81,6 +81,10 @@ A growing reference of tips, shortcuts, and workflows learned while building thi
      ```
   4. On **GitHub**, open a **Pull Request** (`ray/task-name` → `main`), review your own diff, and **Merge** it (then delete the merged branch).
   5. Next time you switch computers, run `git switch main && git pull` to grab the merged changes before starting a new branch.
+- **Who does what in a Pull Request:**
+  - **Coder (Author):** Runs `git push` (uploads branch to GitHub) and **creates the PR** (*"please pull my branch into the base branch"*).
+  - **Lead Engineer (Reviewer):** Reviews the diff on GitHub and **merges** it into the target/base branch (`main`, or e.g. `develop`).
+  - **Remember:** `push` = upload to GitHub; `pull` = download from GitHub.
 
 ---
 
