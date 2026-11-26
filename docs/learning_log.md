@@ -27,6 +27,13 @@ A growing reference of tips, shortcuts, and workflows learned while building thi
 - Once your project is open in WSL, **`bash` IS your Ubuntu Linux terminal** (you won't see a separate "Ubuntu (WSL)" entry because you are already *inside* Ubuntu).
 - Click **`+`** / **`bash`**, or press `Ctrl+Shift+ñ` (Spanish keyboard) to open a new Ubuntu terminal directly in your project folder.
 
+### Making more screen space in VS Code (hide/show panels)
+- **Toggle Left Sidebar (Explorer):** `Ctrl+B` *(think **B** = Side**b**ar)*.
+- **Toggle Bottom Panel (Terminal):** `Ctrl+J` *(or `Ctrl+ñ` on a Spanish keyboard)* — **hides** the panel while keeping your terminal alive in the background (clicking the trash can 🗑️ kills it).
+- **Bring back your existing hidden terminal from the menu:** Use **`View → Terminal`** (NOT `Terminal → New Terminal`, which opens a brand-new session!).
+- **Toggle Right Sidebar (Secondary Side Bar):** `Ctrl+Alt+B`.
+- **Zen Mode (distraction-free view):** Press `Ctrl+K`, release, then `Z` *(press `Esc` twice to exit)*.
+
 ### Bash gotcha: `event not found` with `!`
 - Inside **double quotes (`"..."`)**, interactive `bash` treats `!` as a special history shortcut (causing `bash: !: event not found`).
 - Inside **single quotes (`'...'`)**, `bash` treats everything literally — no special characters expanded. Swap quotes (`'...'` outside, `"..."` inside) whenever your command contains `!`.
@@ -116,3 +123,25 @@ A virtual environment gives this project its own isolated Python + libraries so 
   ```
   - `-r` comes from **`--requirement`** — it tells `pip` to read and install all packages listed in the file that follows (`requirements.txt`).
 - **Python packages vs. system tools:** Libraries like `pandas` and `streamlit` go in `requirements.txt` (installed with `pip`). System tools like **Docker** are installed at the OS level, not via `pip`.
+
+### Jupyter Notebooks in VS Code (shortcuts)
+Press **`Esc`** first to enter *Command Mode* (cursor stops blinking inside the cell), then:
+- **`M`** → Change cell to **Markdown** (text/headings)
+- **`Y`** → Change cell to **Code** (Python)
+- **`A`** / **`B`** → Insert a new cell **A**bove / **B**elow
+- **`DD`** (press `D` twice) → Delete the selected cell
+- **`Shift+Enter`** → Run the cell and move to the next one
+- *(Mouse option: click the **`...`** menu on the top-right of the cell → **Change Cell to Markdown / Code**.)*
+
+### Handy Pandas EDA tricks
+- **List all column names (full names, not cut off):** `df.columns.tolist()`
+- **Stop pandas from hiding middle columns with `...`:** `pd.set_option("display.max_columns", None)`
+- **Limit decimal places globally in pandas outputs (display only):** `pd.set_option("display.float_format", "{:.2f}".format)` *(or `.round(2)` for a single table)*
+- **Show only columns that have missing values:** `df.isna().sum()[df.isna().sum() > 0]`
+
+### How to read a Boxplot (*diagrama de caja y bigotes*)
+A boxplot slices all values from smallest to largest into **4 quarters (25% each)**:
+- **Blue box (IQR):** The **middle 50%** of the data — bottom edge = **Q1 (25%)**, top edge = **Q3 (75%)**.
+- **Line inside the box:** The **Median (50%)** — exact middle value.
+- **Whiskers (top/bottom T-lines):** The typical min/max range (values outside are **outliers**, hidden when `showfliers=False`).
+- **Quick read:** Taller box = more spread/variation; higher box = larger values.
